@@ -28,7 +28,8 @@ export class ProductService {
   }
 async  update (data:any): Promise<any>
   {
-      return await this.productModel.updateOne({id:data.id},{name:data.Name,age:data.Age,address:data.Address})
+      return await this.productModel.updateOne({id:data.id},
+        {name:data.Name,age:data.Age,address:data.Address})
   }
   async remove(data: any): Promise<void> {
     const result= await this.productModel.deleteOne({id:data.id});
